@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import WordAndNums from './components/WordAndNums';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Routing Practice</h1>
+      <Routes>
+        <Route path='/home' element={<Home />} />
+        <Route path='/:wordornum' element={<WordAndNums />} />
+        <Route path='/:wordornum/:color/:backgroundColor' element={<WordAndNums />} />
+      </Routes>
     </div>
   );
 }
